@@ -49,13 +49,15 @@ function draw() {
 function createApples() {
   if(frameCount % 75 === 0) {
     apple = createSprite(200,0,10,10);
-    apple.velocityY = 3;
+    apple.velocityY = 2;
     apple.addImage(appleImg);
     apple.scale = 0.1;
 
     var rand = Math.round(random(20,370));
 
     apple.x = rand;
+    
+    apple.lifetime = 180;
 
     apple.depth = rabbit.depth;
     rabbit.depth = rabbit.depth + 1;
@@ -72,6 +74,8 @@ function createLeaves() {
     var rand1 = Math.round(random(20,370)); 
 
     leaves.x = rand1;
+    
+    leaves.lifetime = 180;
 
     leaves.depth = rabbit.depth;
     rabbit.depth = rabbit.depth + 1;
